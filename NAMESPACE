@@ -3,3 +3,4 @@
 export(RSIT_est)
 export(RSIT_pvalue)
 export(simu.binary.phe)
+export(simu_snp_mat)

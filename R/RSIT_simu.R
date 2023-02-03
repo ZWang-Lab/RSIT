@@ -15,7 +15,7 @@
 #' 
 #' 
 #' 
-#' @return A list object is returned to be used as object for RSVMMAT test
+#' @return A list object is returned to be used as object for RSIT test
 #' @export
 
 simu.binary.phe<-function(n.sample, geno, n_casual=c(2,8),  main_effect=c(0.1,0.2), GE_effect=c(0.3,0.88), 
@@ -129,10 +129,25 @@ direction=c("same","same"), GEindependent=T, power=T, maineffect=T,SNPtype="rare
     return(list(y=y, x1=x1,x2=x2,e1=e1,G=G,pre=pre,variance_prop=variance_prop));
 }
 
+#' Simulate the genotype data
+#'
+#' This function use pre-defined parameters to simulate the genotype data
+#'
+#' @param n.sample Numeric, sample size, number of individuals
+#' @param mat.count Numeric, number of SNP regions
+#' @param common_snp Logical variable, indicating whether  the region include common SNPs
+#' @param independent Logical variable, indicating whether SNPs in the same region are independent
+#
+#' 
+#' 
+#' 
+#' @return A list object is returned to be used as genotype for RSIT test
+#' @export
+
 simu_snp_mat<-function(  n.sample, mat.count,common_snp=F,independent=F)
 {
-  file.snp.hap1 <- system.file("extdata", "skat-test-1.hap.gz", package="RSVMMAT");
-  file.snp.pos2 <- system.file("extdata", "skat-test-1.pos", package="RSVMMAT");
+  file.snp.hap1 <- system.file("extdata", "skat-test-1.hap.gz", package="RSIT");
+  file.snp.pos2 <- system.file("extdata", "skat-test-1.pos", package="RSIT");
   
   snp.hap <- utils::read.table(file.snp.hap1, header=F);
   snp.pos <- utils::read.table(file.snp.pos2, header=T);

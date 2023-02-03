@@ -14,7 +14,7 @@ RSIT_pvalue(TYall, G, impute.method = "fixed")
 \item{impute.method}{choose the iputation method when there is missing genotype. Optional options are: 'random', 'fixed' or 'bestguess'.}
 }
 \value{
-This function returns a vector of the pvalue of RSIT-B,RSIT-S,RSIT-V,RSIT-A,RSIT-O, and RSIT-E.
+This function returns a vector of the pvalue of RSIT-B,RSIT-S, and RSIT-E.
 }
 \description{
 This function tests a SNPs for a given SNP set for a given rsit estimated null model.

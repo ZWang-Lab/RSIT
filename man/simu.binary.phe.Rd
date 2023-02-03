@@ -13,19 +13,21 @@ simu.binary.phe(
   direction = c("same", "same"),
   GEindependent = T,
   power = T,
-  maineffect = T
+  maineffect = T,
+  SNPtype = "rare_common",
+  main_GE = T
 )
 }
 \arguments{
 \item{n.sample}{Numeric, sample size, number of individuals}
 
-\item{geno}{matrix, Genotype matrix}
+\item{geno}{matrix, genotype matrix}
 
 \item{n_casual}{Vector, number of causal SNPs for common SNPs and rare SNPs}
 
-\item{main_effect}{Vector, gene-environment tnteraction effect for common SNPs and rare SNPs}
+\item{main_effect}{Vector, gene-environment interaction effect for common SNPs and rare SNPs}
 
-\item{direction}{Vector, main effect and gene-environment tnteraction effect direction}
+\item{direction}{Vector, main effect and gene-environment interaction effect direction}
 
 \item{GEindependent}{Logical variable, indicating whether gene and environment variable are independent}
 
@@ -34,8 +36,8 @@ simu.binary.phe(
 \item{maineffect}{Logical variable, indicating whether include main effect}
 }
 \value{
-A list object is returned to be used as object for RSVMMAT test
+A list object is returned to be used as object for RSIT test
 }
 \description{
-This function use pre-defined parameters to make the simulation data for the RSVMMAT test (including type I and power test)
+This function use pre-defined parameters to make the simulation data for the RSIT test (including type I and power test)
 }

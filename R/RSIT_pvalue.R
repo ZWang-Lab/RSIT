@@ -6,7 +6,7 @@
 #' @param G The genotype matrix, an m*q matrix where m is the number of subjects and q is the total number genetic variants. 
 #' @param impute.method choose the iputation method when there is missing genotype. Optional options are: 'random', 'fixed' or 'bestguess'.
 #' 
-#' @return This function returns a vector of the pvalue of RSIT-B,RSIT-S,RSIT-V,RSIT-A,RSIT-O, and RSIT-E.
+#' @return This function returns a vector of the pvalue of RSIT-B,RSIT-S, and RSIT-E.
 #' 
 #' @export
 
@@ -67,7 +67,7 @@ RSIT_pvalue=function(TYall,G,impute.method='fixed'){
   weightV=weights*(MAF*(1-MAF))^0.5
   RSIT_V=aca.pvalue(pV,weightV)
   RSIT_A=aca.pvalue(c(RSIT_B,RSIT_S,RSIT_V),rep(1/3,3))
-  pvalue=c(RSIT_B,RSIT_S,RSIT_V,RSIT_A,RSIT_O,RSIT_E)
+  pvalue=c(RSIT_B,RSIT_S,RSIT_E)
   return(pvalue)
 }
 
