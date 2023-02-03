@@ -1,0 +1,41 @@
+---
+title: "RSIT"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{RSIT}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(RSIT)
+```
+Use a simulated genotype dataset for 5,000 indiviudals:
+```{r}
+geno=simu_snp_mat(10*5000,1,common_snp=T,independent=F)[[1]]
+```
+Use a simulated binary phenotype and genotype data with case-control sampling for 5000 subjects. Each subject has 10 causal SNPs containing 2 common SNPs and 8 rare SNPs:
+```{r}
+fit1=simu.binary.phe(5000, geno, n_casual=c(2,8), main_effect=c(0.1,0.2), GE_effect=c(0.3,0.88), direction=c("oppo","oppo"), GEindependent=T, power=T, maineffect=F)
+```
+
+
+Assign the data and estimate null model:
+```{r}
+y=fit1$y;x1=fit1$x1;x2=fit1$x2;e1=fit1$e1;G=fit1$G;pre=fit1$pre
+G = as.matrix(G);y = as.matrix(y); E = as.matrix(e1);X = cbind(x1,x2);X = as.matrix(X);
+TY=RSIT_est(y,X,E,family="binomial")
+```
+
+Perform RSITs:
+```{r}
+p_rsit=RSIT_pvalue(TY,G)
+p_rsit
+```
