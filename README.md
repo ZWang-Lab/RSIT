@@ -23,4 +23,4 @@ devtools::install_github(repo = 'ZWang-Lab/RSIT.git')
 ```
 ## Usage instructions
 
-All functions and examples in the RSIT are available in the manual file
+All functions and examples in the RSIT are available in the manual file (https://github.com/ZWang-Lab/RSIT/blob/main/RSIT_0.0.1.0.pdf)
