@@ -11,11 +11,11 @@ RSIT_pvalue(TYall, G, impute.method = "fixed")
 
 \item{G}{The genotype matrix, an m*q matrix where m is the number of subjects and q is the total number genetic variants.}
 
-\item{impute.method}{choose the iputation method when there is missing genotype. Optional options are: 'random', 'fixed' or 'bestguess'.}
+\item{impute.method}{choose the imputation method when there is missing genotype. Optional options are: 'random', 'fixed' or 'bestguess'.}
 }
 \value{
-This function returns a vector of the pvalue of RSIT-B,RSIT-S, and RSIT-E.
+This function returns a vector of the P-value of RSIT-B, RSIT-S, and RSIT-E.
 }
 \description{
-This function tests a SNPs for a given SNP set for a given rsit estimated null model.
+This function tests a SNPs for a given SNP set for a given RSIT estimated null model.
 }

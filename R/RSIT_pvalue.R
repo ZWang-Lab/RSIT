@@ -1,12 +1,12 @@
 #' Calculate  P-values 
 #'
-#' This function tests a SNPs for a given SNP set for a given rsit estimated null model.
+#' This function tests a SNPs for a given SNP set for a given RSIT estimated null model.
 #'
 #' @param TYall The output of function "RSIT_est()"
 #' @param G The genotype matrix, an m*q matrix where m is the number of subjects and q is the total number genetic variants. 
-#' @param impute.method choose the iputation method when there is missing genotype. Optional options are: 'random', 'fixed' or 'bestguess'.
+#' @param impute.method choose the imputation method when there is missing genotype. Optional options are: 'random', 'fixed' or 'bestguess'.
 #' 
-#' @return This function returns a vector of the pvalue of RSIT-B,RSIT-S, and RSIT-E.
+#' @return This function returns a vector of the P-value of RSIT-B, RSIT-S, and RSIT-E.
 #' 
 #' @export
 
